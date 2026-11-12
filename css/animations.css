@@ -1,0 +1,56 @@
+/* ============================================================
+   English Adventure — CSS keyframe animations (ambient loops).
+   Interactive animation is handled by GSAP; these run
+   continuously and must stay cheap (transform/opacity only).
+   ============================================================ */
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.07); }
+}
+
+@keyframes wiggleSoft {
+  0%, 100% { transform: rotate(-4deg); }
+  50% { transform: rotate(4deg); }
+}
+
+/* Home decorative elements float forever, offset by --i so they
+   are out of phase. Runs without GSAP. */
+.deco-item {
+  animation: floatY 3.8s ease-in-out infinite alternate;
+  animation-duration: calc(3.4s + var(--i, 0) * 0.45s);
+  animation-delay: calc(var(--i, 0) * -0.7s);
+}
+
+.modal-art {
+  animation: pulseSoft 2.4s ease-in-out infinite;
+}
+
+.trophy-wrap {
+  animation: wiggleSoft 3.2s ease-in-out infinite;
+}
+
+.btn-replay:not(:disabled) {
+  animation: pulseSoft 2s ease-in-out infinite;
+}
+
+.card-check {
+  animation: pulseSoft 2.6s ease-in-out infinite;
+}
+
+/* Respect user motion preferences: ambient loops stop instantly. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,48 @@
+// Stage 4 data — 12 fruits + 12 vegetables = 24 items.
+// Both categories share one stage; progress is tracked together.
+
+export const fruitsVegetables = [
+  // Fruits
+  { id: 'apple', name: 'Apple', category: 'fruit', image: 'assets/images/food/fruits/apple.png', audio: 'assets/audio/fruits/apple.mp3', emoji: '🍎' },
+  { id: 'banana', name: 'Banana', category: 'fruit', image: 'assets/images/food/fruits/banana.png', audio: 'assets/audio/fruits/banana.mp3', emoji: '🍌' },
+  { id: 'orange', name: 'Orange', category: 'fruit', image: 'assets/images/food/fruits/orange.png', audio: 'assets/audio/fruits/orange.mp3', emoji: '🍊' },
+  { id: 'strawberry', name: 'Strawberry', category: 'fruit', image: 'assets/images/food/fruits/strawberry.png', audio: 'assets/audio/fruits/strawberry.mp3', emoji: '🍓' },
+  { id: 'grapes', name: 'Grapes', category: 'fruit', image: 'assets/images/food/fruits/grapes.png', audio: 'assets/audio/fruits/grapes.mp3', emoji: '🍇' },
+  { id: 'watermelon', name: 'Watermelon', category: 'fruit', image: 'assets/images/food/fruits/watermelon.png', audio: 'assets/audio/fruits/watermelon.mp3', emoji: '🍉' },
+  { id: 'pineapple', name: 'Pineapple', category: 'fruit', image: 'assets/images/food/fruits/pineapple.png', audio: 'assets/audio/fruits/pineapple.mp3', emoji: '🍍' },
+  { id: 'mango', name: 'Mango', category: 'fruit', image: 'assets/images/food/fruits/mango.png', audio: 'assets/audio/fruits/mango.mp3', emoji: '🥭' },
+  { id: 'pear', name: 'Pear', category: 'fruit', image: 'assets/images/food/fruits/pear.png', audio: 'assets/audio/fruits/pear.mp3', emoji: '🍐' },
+  { id: 'peach', name: 'Peach', category: 'fruit', image: 'assets/images/food/fruits/peach.png', audio: 'assets/audio/fruits/peach.mp3', emoji: '🍑' },
+  { id: 'cherry', name: 'Cherry', category: 'fruit', image: 'assets/images/food/fruits/cherry.png', audio: 'assets/audio/fruits/cherry.mp3', emoji: '🍒' },
+  { id: 'lemon', name: 'Lemon', category: 'fruit', image: 'assets/images/food/fruits/lemon.png', audio: 'assets/audio/fruits/lemon.mp3', emoji: '🍋' },
+  { id: 'kiwi', name: 'Kiwi', category: 'fruit', image: 'assets/images/food/fruits/kiwi.png', audio: 'assets/audio/fruits/kiwi.mp3', emoji: '🥝' },
+  { id: 'melon', name: 'Melon', category: 'fruit', image: 'assets/images/food/fruits/melon.png', audio: 'assets/audio/fruits/melon.mp3', emoji: '🍈' },
+  { id: 'tangerine', name: 'Tangerine', category: 'fruit', image: 'assets/images/food/fruits/tangerine.png', audio: 'assets/audio/fruits/tangerine.mp3', emoji: '🍊' },
+  { id: 'green-apple', name: 'Green Apple', category: 'fruit', image: 'assets/images/food/fruits/green-apple.png', audio: 'assets/audio/fruits/green-apple.mp3', emoji: '🍏' },
+  { id: 'avocado', name: 'Avocado', category: 'fruit', image: 'assets/images/food/fruits/avocado.png', audio: 'assets/audio/fruits/avocado.mp3', emoji: '🥑' },
+  { id: 'coconut', name: 'Coconut', category: 'fruit', image: 'assets/images/food/fruits/coconut.png', audio: 'assets/audio/fruits/coconut.mp3', emoji: '🥥' },
+  { id: 'blueberry', name: 'Blueberry', category: 'fruit', image: 'assets/images/food/fruits/blueberry.png', audio: 'assets/audio/fruits/blueberry.mp3', emoji: '🫐' },
+  { id: 'olive', name: 'Olive', category: 'fruit', image: 'assets/images/food/fruits/olive.png', audio: 'assets/audio/fruits/olive.mp3', emoji: '🫒' },
+
+  // Vegetables
+  { id: 'carrot', name: 'Carrot', category: 'vegetable', image: 'assets/images/food/vegetables/carrot.png', audio: 'assets/audio/vegetables/carrot.mp3', emoji: '🥕' },
+  { id: 'potato', name: 'Potato', category: 'vegetable', image: 'assets/images/food/vegetables/potato.png', audio: 'assets/audio/vegetables/potato.mp3', emoji: '🥔' },
+  { id: 'tomato', name: 'Tomato', category: 'vegetable', image: 'assets/images/food/vegetables/tomato.png', audio: 'assets/audio/vegetables/tomato.mp3', emoji: '🍅' },
+  { id: 'broccoli', name: 'Broccoli', category: 'vegetable', image: 'assets/images/food/vegetables/broccoli.png', audio: 'assets/audio/vegetables/broccoli.mp3', emoji: '🥦' },
+  { id: 'cucumber', name: 'Cucumber', category: 'vegetable', image: 'assets/images/food/vegetables/cucumber.png', audio: 'assets/audio/vegetables/cucumber.mp3', emoji: '🥒' },
+  { id: 'onion', name: 'Onion', category: 'vegetable', image: 'assets/images/food/vegetables/onion.png', audio: 'assets/audio/vegetables/onion.mp3', emoji: '🧅' },
+  { id: 'lettuce', name: 'Lettuce', category: 'vegetable', image: 'assets/images/food/vegetables/lettuce.png', audio: 'assets/audio/vegetables/lettuce.mp3', emoji: '🥬' },
+  { id: 'pepper', name: 'Pepper', category: 'vegetable', image: 'assets/images/food/vegetables/pepper.png', audio: 'assets/audio/vegetables/pepper.mp3', emoji: '🌶️' },
+  { id: 'corn', name: 'Corn', category: 'vegetable', image: 'assets/images/food/vegetables/corn.png', audio: 'assets/audio/vegetables/corn.mp3', emoji: '🌽' },
+  { id: 'cabbage', name: 'Cabbage', category: 'vegetable', image: 'assets/images/food/vegetables/cabbage.png', audio: 'assets/audio/vegetables/cabbage.mp3', emoji: '🥬' },
+  { id: 'pumpkin', name: 'Pumpkin', category: 'vegetable', image: 'assets/images/food/vegetables/pumpkin.png', audio: 'assets/audio/vegetables/pumpkin.mp3', emoji: '🎃' },
+  { id: 'eggplant', name: 'Eggplant', category: 'vegetable', image: 'assets/images/food/vegetables/eggplant.png', audio: 'assets/audio/vegetables/eggplant.mp3', emoji: '🍆' },
+  { id: 'peas', name: 'Peas', category: 'vegetable', image: 'assets/images/food/vegetables/peas.png', audio: 'assets/audio/vegetables/peas.mp3', emoji: '🫛' },
+  { id: 'garlic', name: 'Garlic', category: 'vegetable', image: 'assets/images/food/vegetables/garlic.png', audio: 'assets/audio/vegetables/garlic.mp3', emoji: '🧄' },
+  { id: 'sweet-potato', name: 'Sweet Potato', category: 'vegetable', image: 'assets/images/food/vegetables/sweet-potato.png', audio: 'assets/audio/vegetables/sweet-potato.mp3', emoji: '🍠' },
+  { id: 'beans', name: 'Beans', category: 'vegetable', image: 'assets/images/food/vegetables/beans.png', audio: 'assets/audio/vegetables/beans.mp3', emoji: '🫘' },
+  { id: 'mushroom', name: 'Mushroom', category: 'vegetable', image: 'assets/images/food/vegetables/mushroom.png', audio: 'assets/audio/vegetables/mushroom.mp3', emoji: '🍄' },
+  { id: 'bell-pepper', name: 'Bell Pepper', category: 'vegetable', image: 'assets/images/food/vegetables/bell-pepper.png', audio: 'assets/audio/vegetables/bell-pepper.mp3', emoji: '🫑' },
+  { id: 'ginger', name: 'Ginger', category: 'vegetable', image: 'assets/images/food/vegetables/ginger.png', audio: 'assets/audio/vegetables/ginger.mp3', emoji: '🫚' },
+  { id: 'peanut', name: 'Peanut', category: 'vegetable', image: 'assets/images/food/vegetables/peanut.png', audio: 'assets/audio/vegetables/peanut.mp3', emoji: '🥜' },
+];

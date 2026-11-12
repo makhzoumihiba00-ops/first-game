@@ -1,0 +1,160 @@
+/* ============================================================
+   English Adventure — responsive refinements
+   (tablet & phone). The base layout already uses fluid grids;
+   these breakpoints keep touch targets large and text readable.
+   ============================================================ */
+
+/* Tablet */
+@media (max-width: 900px) {
+  .board {
+    grid-template-columns: repeat(auto-fill, minmax(94px, 1fr));
+    gap: 11px;
+  }
+
+  .preview-panel {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .preview-info {
+    align-items: center;
+  }
+
+  .preview-stage {
+    width: 122px;
+    height: 122px;
+  }
+
+  .media-xl .media-emoji {
+    font-size: 82px;
+  }
+
+  .letter-huge {
+    font-size: 84px;
+  }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+  .screen {
+    padding: 0 12px 14px;
+  }
+
+  .board {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 9px;
+  }
+
+  .card {
+    min-height: 88px;
+    padding: 9px 4px 8px;
+    border-radius: var(--r-md);
+  }
+
+  .letter-big {
+    font-size: 30px;
+  }
+
+  .card .swatch {
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+  }
+
+  .card .media-card {
+    height: 44px;
+  }
+
+  .card .media-card .media-emoji {
+    font-size: 36px;
+  }
+
+  .card-label {
+    font-size: 12px;
+  }
+
+  .card-check {
+    width: 24px;
+    height: 24px;
+    font-size: 12px;
+    top: -7px;
+    right: -7px;
+    border-width: 2px;
+  }
+
+  .icon-btn {
+    width: 42px;
+    height: 42px;
+    font-size: 19px;
+  }
+
+  .topbar {
+    gap: 8px;
+    padding-top: calc(8px + env(safe-area-inset-top, 0px));
+  }
+
+  .topbar-name {
+    font-size: 15px;
+  }
+
+  .pill {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
+  .stage-chips {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .tab {
+    padding: 9px 14px;
+    font-size: 14px;
+  }
+
+  .preview-name {
+    font-size: 26px;
+  }
+
+  .letter-huge {
+    font-size: 74px;
+  }
+
+  .btn-hero {
+    width: min(340px, 86vw);
+  }
+
+  .stage-foot {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .progress-label {
+    font-size: 13px;
+  }
+
+  .modal {
+    padding: 26px 20px;
+  }
+
+  .trophy {
+    font-size: 84px;
+  }
+
+  .trophy-wrap {
+    width: 130px;
+    height: 130px;
+  }
+}
+
+/* Small phones */
+@media (max-width: 380px) {
+  .board {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  }
+
+  .logo-word {
+    letter-spacing: 0;
+  }
+}
