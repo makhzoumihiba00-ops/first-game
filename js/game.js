@@ -11,6 +11,9 @@ import { colorsStage } from './stages/colors-stage.js';
 import { animalsStage } from './stages/animals-stage.js';
 import { foodStage } from './stages/food-stage.js';
 import { audioEngine } from './systems/audio.js';
+import { QUIZ_CATEGORIES } from './quiz/quiz-data.js';
+import { buildQuizSelectScreen } from './quiz/quiz-select.js';
+import { buildQuizScreen } from './quiz/quiz-screen.js';
 
 const STAGE_CONFIGS = {
   alphabet: alphabetStage,
@@ -35,6 +38,14 @@ export function startGame() {
     }
     state.selectStage(stageId);
     return buildStageScreen(config);
+  });
+
+  registerRoute('quiz-select', () => buildQuizSelectScreen());
+
+  registerRoute('quiz', ({ categoryId }) => {
+    const category = QUIZ_CATEGORIES.find((c) => c.id === categoryId);
+    // Unknown categories land on the picker instead of a blank screen.
+    return category ? buildQuizScreen(category) : buildQuizSelectScreen();
   });
 
   registerRoute('game-complete', () => {

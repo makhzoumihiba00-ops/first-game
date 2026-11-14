@@ -2,7 +2,7 @@
 
 A playful, child-friendly English learning game built with **HTML5, CSS3, Vanilla JavaScript (ES6 modules) and GSAP**. No frameworks, no build step — just a static folder and a local server.
 
-One continuous adventure with four connected stages:
+One continuous adventure with four connected stages, plus a **Quiz Time!** test mode:
 
 | # | Stage | Items |
 |---|-------|-------|
@@ -13,6 +13,19 @@ One continuous adventure with four connected stages:
 | | **Total** | **118 learning items** |
 
 Completing a stage automatically unlocks the next one. The final stage leads to a big celebration screen with a trophy, confetti and accurate totals.
+
+## 🧩 Quiz Time! (test mode)
+
+A separate quiz game reachable from the home screen — no unlocking required, all four categories available. Each quiz:
+
+- **10 randomized questions** (no repeats in a run) with **3 shuffled written options** (never A/B/C labels)
+- **5:00 countdown** — the timer turns orange under a minute and red under 15 s; running out ends the quiz early
+- **Voice narration** for every question (auto-read on arrival, replay 🔁 button, works with the global sound toggle), including a *listen-and-find* letter question type
+- **Gentle immediate feedback** — green sparkle burst + "Great job!" for correct, soft coral shake + the right answer shown kindly for wrong; options lock after one answer and auto-advance (or tap Next)
+- **Celebration results** — 1–3 stars (≥80% / ≥50% / effort), animated score, encouraging message, confetti, and Try Again / Categories / Keep Learning buttons
+- **Best score per category** is remembered (stars + %) and shown on the picker cards and quiz intros
+
+Alphabet distractors are deliberately *confusable* letters (B/D/P, M/N/W…) for kinder, more useful practice.
 
 ## ▶️ How to run
 
@@ -48,7 +61,7 @@ Then open **http://localhost:8000**. (VS Code "Live Server" works too.)
 
 ```text
 index.html                  entry page (all screens render inside #app)
-css/                        design tokens, layout, keyframes, responsive rules
+css/                        design tokens, layout, keyframes, responsive rules, quiz styles
 js/
   main.js                   entry point
   game.js                   route wiring & bootstrapping
@@ -58,6 +71,7 @@ js/
   stages/                   per-stage configs plugged into the shared screen
   systems/                  audio, animations (GSAP), progress, navigation
   ui/                       home, shared learning screen, completion screens
+  quiz/                     Quiz Time! mode: data, session, timer, speech, screens
 assets/                     drop your final artwork & audio here
 ```
 

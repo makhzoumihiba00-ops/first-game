@@ -211,4 +211,58 @@ export const fx = {
     if (!motionOK() || !trophyWrap) return;
     g().fromTo(trophyWrap, { scale: 0, rotation: -20 }, { scale: 1, rotation: 0, duration: 0.8, ease: 'elastic.out(1, 0.45)' });
   },
+
+  /* --------------------------- quiz ---------------------------- */
+
+  // Radial burst of tiny stars from the center of a node (correct answer).
+  sparkleBurst(node) {
+    if (!motionOK() || !node) return;
+    const rect = node.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    const layer = document.createElement('div');
+    layer.style.cssText = 'position:fixed;inset:0;pointer-events:none;z-index:150;overflow:hidden;';
+    document.body.appendChild(layer);
+    const emojis = ['✨', '⭐', '🌟', '💫'];
+    for (let i = 0; i < 9; i++) {
+      const spark = document.createElement('span');
+      spark.textContent = emojis[i % emojis.length];
+      spark.style.cssText = `position:absolute;left:${cx}px;top:${cy}px;font-size:${g().utils.random(16, 26)}px;will-change:transform,opacity;`;
+      layer.appendChild(spark);
+      const angle = (Math.PI * 2 * i) / 9 + g().utils.random(-0.3, 0.3);
+      const dist = g().utils.random(60, 110);
+      g().fromTo(
+        spark,
+        { x: 0, y: 0, scale: 0.3, opacity: 1 },
+        {
+          x: Math.cos(angle) * dist,
+          y: Math.sin(angle) * dist - 30,
+          scale: 1.1,
+          opacity: 0,
+          duration: g().utils.random(0.6, 0.95),
+          ease: 'power2.out',
+          onComplete: () => spark.remove(),
+        }
+      );
+    }
+    setTimeout(() => layer.remove(), 1200);
+  },
+
+  // Number count-up for the results score. The final value is set first so
+  // the score is always correct; the tween only adds counting delight and
+  // is skipped entirely without motion (frozen frames, reduced motion).
+  countUp(node, to, { duration = 1.1 } = {}) {
+    if (!node) return;
+    node.textContent = String(to);
+    if (!motionOK()) return;
+    const counter = { v: 0 };
+    g().to(counter, {
+      v: to,
+      duration,
+      ease: 'power1.out',
+      onUpdate: () => {
+        node.textContent = String(Math.round(counter.v));
+      },
+    });
+  },
 };

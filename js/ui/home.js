@@ -20,7 +20,8 @@ const DECORATIONS = [
   { emoji: '✨', left: '20%', top: '8%', size: '32px' },
 ];
 
-function logoWord(word, offset = 0) {
+// Also used by the quiz picker for its colorful title.
+export function logoWord(word, offset = 0) {
   return el('span', { class: 'logo-word' },
     [...word].map((ch, i) => el('span', {
       class: 'logo-letter',
@@ -75,6 +76,12 @@ export function buildHomeScreen() {
     navigateTo('stage', { stageId: target });
   });
 
+  const quizBtn = el('button', { class: 'btn btn-quiz', type: 'button', text: '🧩 Quiz Time!' });
+  quizBtn.addEventListener('click', () => {
+    audioEngine.playEffect('pop');
+    navigateTo('quiz-select');
+  });
+
   const chips = el('div', { class: 'stage-chips' });
   STAGES.forEach((def) => {
     const stats = stageStats(def.id);
@@ -110,6 +117,7 @@ export function buildHomeScreen() {
     el('p', { class: 'tagline', text: 'Learn English step by step — letters, colors, animals and yummy food!' }),
     el('span', { class: 'home-progress-pill' }, [`${totals.explored} / ${totals.total} items learned`]),
     primaryBtn,
+    quizBtn,
     chips,
   ]);
 
@@ -117,11 +125,11 @@ export function buildHomeScreen() {
     deco,
     el('div', { class: 'home-top' }, [soundBtn]),
     hero,
-    el('p', { class: 'home-foot', text: 'Made with 💙 for young English learners · v1.1' })
+    el('p', { class: 'home-foot', text: 'Made with 💙 for young English learners · v1.2' })
   );
 
   fx.logoLetters([...screen.querySelectorAll('.logo-letter')]);
-  fx.buttonsIn([primaryBtn, ...chips.children]);
+  fx.buttonsIn([primaryBtn, quizBtn, ...chips.children]);
 
   return screen;
 }

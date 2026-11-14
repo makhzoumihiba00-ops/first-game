@@ -324,6 +324,20 @@ class AudioEngine {
         note(1046.5, 0.36, 0.5, 'triangle', 0.2);
         note(261.63, 0, 0.8, 'sine', 0.08);
         break;
+      case 'wrong':
+        // Gentle "good try" — soft two-note droop, never scary.
+        note(392, 0, 0.16, 'sine', 0.12);
+        note(311.13, 0.14, 0.26, 'sine', 0.1);
+        break;
+      case 'whoosh':
+        // Quick soft sweep when the next question slides in.
+        note(520, 0, 0.16, 'sine', 0.06, 1040);
+        break;
+      case 'star':
+        // Little sparkle tinkle for each results-star pop.
+        note(1318.5, 0, 0.16, 'sine', 0.12);
+        note(1760, 0.08, 0.24, 'sine', 0.1);
+        break;
       default:
         break;
     }
